@@ -1,0 +1,73 @@
+PROBABILITY & STATISTICS PREP (CARDIOSENSE)
+
+1) WHAT WE DID IN PROBABILITY + STATS
+- Descriptive statistics: count, mean, std, min, quartiles, max for each feature.
+- Confidence intervals (95%) for numeric features using the t-distribution.
+- Conditional probabilities by gender: P(target=1 | male) and P(target=1 | female).
+- Binomial example: P(X=7) out of n=10 with p = overall target rate.
+- Normal model for cholesterol: P(chol > 240) using a normal CDF.
+- Visual distributions: histograms and KDE for numeric features.
+- Correlation heatmap for numeric variables and the target.
+
+2) KEY DEFINITIONS (SHORT VIVA ANSWERS)
+- Random variable: a variable whose values depend on outcomes of a random process.
+- Population vs sample: population is the full set; sample is a subset used to estimate.
+- Mean: average of sample values; estimator of population mean.
+- Variance/standard deviation: spread of data around the mean.
+- Conditional probability: probability of A given B, written P(A|B).
+- Confidence interval: range of plausible values for a population parameter.
+- Correlation: measures linear association; does not imply causation.
+
+3) FORMULAS WE USED
+- Sample mean: x_bar = (1/n) * sum(x_i)
+- Sample standard deviation: s = sqrt( sum((x_i - x_bar)^2) / (n - 1) )
+- 95% CI for mean (unknown sigma): x_bar +/- t_(alpha/2, n-1) * s / sqrt(n)
+- Conditional probability: P(A|B) = P(A and B) / P(B)
+- Binomial PMF: P(X = k) = C(n,k) * p^k * (1-p)^(n-k)
+- Normal tail: P(X > a) = 1 - Phi((a - mu)/sigma)
+
+4) DATASET FACTS YOU CAN QUOTE
+- Rows = 1025, Columns = 14, Target rate = 0.5132 (approx 51.3%).
+- Numeric features used for CI: age, trestbps, chol, thalach, oldpeak.
+- Example CI results (95%):
+  * age mean 54.434, CI [53.878, 54.990]
+  * trestbps mean 131.612, CI [130.538, 132.685]
+  * chol mean 246.000, CI [242.838, 249.162]
+  * thalach mean 149.114, CI [147.704, 150.524]
+  * oldpeak mean 1.072, CI [0.999, 1.144]
+
+5) WHY WE USED T-DISTRIBUTION FOR CI
+- Population standard deviation is unknown.
+- Sample size is large but the correct formula for unknown sigma uses t.
+- As n grows, t approaches the normal distribution.
+
+6) HOW TO EXPLAIN THE PROBABILITY PARTS
+- P(target=1): overall disease rate in the dataset.
+- P(target=1 | sex): compares disease rate by gender.
+- Binomial example: probability that exactly 7 out of 10 randomly selected patients have disease if p is the dataset target rate.
+- Normal cholesterol model: assumes chol is approximately normal to estimate tail risk above 240.
+
+7) LIKELY VIVA QUESTIONS + SHORT ANSWERS
+Q: Why use confidence intervals?
+A: To quantify uncertainty around the sample mean and show a plausible range for the population mean.
+
+Q: Why use t-distribution instead of z?
+A: Population standard deviation is unknown; t accounts for extra uncertainty.
+
+Q: What does P(target=1 | male) mean?
+A: The probability a patient has heart disease given they are male.
+
+Q: What does P(chol > 240) represent?
+A: The estimated probability of high cholesterol using a normal model.
+
+Q: What does a correlation heatmap show?
+A: The strength and direction of linear relationships between numeric variables.
+
+Q: Why histograms and KDE?
+A: To see the shape of distributions, skewness, and outliers.
+
+Q: What is the binomial distribution used for here?
+A: Modeling the probability of k successes (heart disease cases) in n independent trials.
+
+8) QUICK ONE-LINE SUMMARY FOR VIVA
+We used descriptive statistics, t-based confidence intervals, conditional probabilities, binomial and normal models, and correlation analysis to explain the heart disease dataset in a probability and statistics framework.
