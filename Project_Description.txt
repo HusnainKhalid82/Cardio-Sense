@@ -1,0 +1,24 @@
+Project_Description
+
+CardioSense — Interactive Heart Disease Risk Prediction
+
+CardioSense is a compact, portfolio-ready project that analyzes a heart disease dataset and provides an interactive Streamlit dashboard for exploration and individual risk estimation using an interpretable logistic regression model.
+
+What it does:
+- Loads and summarizes the heart disease dataset
+- Computes descriptive statistics and confidence intervals for key variables
+- Provides probability summaries and conditional probabilities of interest
+- Trains and evaluates a logistic regression model with preprocessing (scaling and encoding)
+- Exposes an interactive Streamlit UI to explore data and estimate individual risk via input controls
+
+Tech stack:
+- Python, pandas, numpy, scipy
+- scikit-learn for modeling
+- matplotlib and seaborn for visualizations
+- Streamlit for the interactive dashboard
+
+Quick run:
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run src/app.py
